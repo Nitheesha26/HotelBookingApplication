@@ -56,7 +56,6 @@ public class BookingServiceTest {
     void testGetAllBookings() {
         // Mock the behavior of the repository
         when(bookingRepository.findAll()).thenReturn(List.of(new Booking(), new Booking()));
-
         // Test the service method
         assertEquals(2, bookingService.getAllBookings().size());       
     }
@@ -68,9 +67,7 @@ public class BookingServiceTest {
             
         Booking foundBooking = bookingService.getBookingById("1");
         assertNotNull(foundBooking);
- 
     }
-   
 
     @Test
     void testUpdateBooking() {
@@ -106,10 +103,8 @@ public class BookingServiceTest {
         assertThrows(BookingNotFoundException.class, () -> {
             bookingService.cancelBooking("769");
         });
-
         // Verify that deleteById method is not called when booking is not found
         verify(bookingRepository, never()).deleteById("769");
     }
       
 }
-

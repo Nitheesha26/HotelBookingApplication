@@ -132,5 +132,4 @@ class BookingControllerTest {
                 .andExpect(jsonPath("$.checkIn").value("2024-02-01T00:00:00"))
                 .andExpect(jsonPath("$.checkOut").value("2024-02-05T00:00:00"));
     }
-
 }
